@@ -51,20 +51,25 @@
   // Ensure the dataLayer is defined
   window.dataLayer = window.dataLayer || [];
   
-  // Delay attaching the event listener to ensure the button is fully loaded
-  setTimeout(function() {
-    var submitButton = document.getElementById('submit-button');
-    if (submitButton) {
-      submitButton.addEventListener('click', function() {
-        console.log("Submit button clicked"); // For debugging
-        dataLayer.push({'event': 'submitButtonClick'});
+  // Attach event listener once DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission
+        
+        // Push the form submission event to the dataLayer
+        dataLayer.push({'event': 'formSubmit'});
+        console.log("Form submitted event pushed to dataLayer");
+
+        // Redirect to the Thank You page
+        window.location.href = "/thank-you.html"; // Update with the actual path of your Thank You page
       });
     } else {
-      console.log("Submit button not found.");
+      console.log("Contact form not found.");
     }
-  }, 500); // 500ms delay
+  });
 </script>
 
-    <script src="script.js"></script>
 </body>
 </html>
