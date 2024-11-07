@@ -1,4 +1,11 @@
 function validateForm() {
+
+    document.getElementById('submit-button').addEventListener('click', function() {
+    console.log("Submit button clicked");
+    dataLayer.push({'event': 'submitButtonClick'});
+});
+
+    
     let isValid = true;
 
     // Clear previous error messages
