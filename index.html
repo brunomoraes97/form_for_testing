@@ -25,7 +25,7 @@
     
     <div class="form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm">
+        <form id="contactForm" onsubmit="event.preventDefault(); window.location.href='https://brunomoraes97.github.io/generic-thank-you-page/';">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your Name">
@@ -46,30 +46,6 @@
             </div>
         </form>
     </div>
-
-<script>
-  // Ensure the dataLayer is defined
-  window.dataLayer = window.dataLayer || [];
-  
-  // Attach event listener once DOM is fully loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    var contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevents the default form submission
-        
-        // Push the form submission event to the dataLayer
-        dataLayer.push({'event': 'formSubmit'});
-        console.log("Form submitted event pushed to dataLayer");
-
-        // Redirect to the Thank You page
-        window.location.href = "/thank-you.html"; // Update with the actual path of your Thank You page
-      });
-    } else {
-      console.log("Contact form not found.");
-    }
-  });
-</script>
 
 </body>
 </html>
