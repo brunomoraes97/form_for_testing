@@ -24,7 +24,7 @@
     
     <div class="form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm" onsubmit="return validateForm()">
+        <form id="contactForm" onsubmit="dataLayer.push({'event': 'submitButtonClick'});">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your Name">
@@ -41,7 +41,7 @@
                 <span id="messageError" class="error-message"></span>
             </div>
             <div class="form-group">
-                <button id="submit-button" type="submit" onclick="dataLayer.push({'event': 'submitButtonClick'});">Submit</button>
+                <button id="submit-button" type="submit">Submit</button>
             </div>
         </form>
     </div>
