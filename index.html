@@ -47,6 +47,17 @@
         </form>
     </div>
 
+        <script>
+      // Ensure the dataLayer is defined
+      window.dataLayer = window.dataLayer || [];
+    
+      // Add event listener to the submit button
+      document.getElementById('submit-button').addEventListener('click', function() {
+          console.log("Submit button clicked"); // For debugging
+          dataLayer.push({'event': 'submitButtonClick'});
+      });
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
